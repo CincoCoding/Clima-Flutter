@@ -78,7 +78,9 @@ class _LocationScreenState extends State<LocationScreen> {
                     ),
                   ),
                   TextButton(
-                    onPressed: () async {},
+                    onPressed: () {
+                      Navigator.pushNamed((context), '/first');
+                    },
                     child: Icon(
                       Icons.location_city,
                       size: 50.0,
