@@ -28,7 +28,7 @@ class _LocationScreenState extends State<LocationScreen> {
     setState(() {
       if (weatherData == null) {
         temperature = 0;
-        weatherIcon = "ERROR";
+        weatherIcon = "Error";
         message = "Unable to get weather data";
         cityName = '';
         return;
@@ -78,8 +78,15 @@ class _LocationScreenState extends State<LocationScreen> {
                     ),
                   ),
                   TextButton(
-                    onPressed: () {
-                      Navigator.pushNamed((context), '/first');
+                    onPressed: () async {
+                      var typedName =
+                          await Navigator.pushNamed(context, '/first');
+                      if (typedName != null) {
+                        var weatherData =
+                            await weather.getCityWeather(typedName);
+                        updateUI(weatherData);
+                        print("updated2!");
+                      }
                     },
                     child: Icon(
                       Icons.location_city,

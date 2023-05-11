@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(theme: ThemeData.dark(), home: LoadingScreen(), routes: {
       '/first': (context) => CityScreen(),
       '/second': (context) => LoadingScreen(),
+      '/third': (context) => LocationScreen(),
     });
   }
 }
