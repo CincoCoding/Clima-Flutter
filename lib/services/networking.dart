@@ -11,17 +11,8 @@ class NetworkHelper {
     if (response.statusCode == 200) {
       String data = response.body;
       return jsonDecode(data);
-
-      Map decodedData = jsonDecode(data);
     } else {
       print(response.statusCode);
     }
   }
 }
-
-//
-// print(latitude);
-// print(longitude);
-// print(temperature);
-// print(condition);
-// print(city);
