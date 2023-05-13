@@ -69,7 +69,6 @@ class _LocationScreenState extends State<LocationScreen> {
                     onPressed: () async {
                       var weatherData = await weather.getLocationWeather();
                       updateUI(weatherData);
-                      print("UPDATED");
                       print(widget.locationWeather);
                     },
                     child: Icon(
